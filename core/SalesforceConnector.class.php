@@ -149,13 +149,8 @@ $this->cn->createConnection(BASEDIR_WSDL . $this->WSDL);
 	
 	//Internal Update implementation
 	public function update($sObjectsArray) {
-		try {
-			$sObject 			= new SObject();
-			$sObject->fields 	= $fields;
-			$sObject->type 		= $type;
-			$sObject->Id		= $Id;	
-			
-			//Send Insert
+		try {			
+			//Send update
 			$response = $this->cn->update(	
 				$sObjectsArray
 			 );
